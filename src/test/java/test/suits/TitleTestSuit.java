@@ -3,17 +3,16 @@ package test.suits;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class TitleTS extends TestSuitBase {
+public class TitleTestSuit extends TestSuitBase {
 
-    String url = "https://example.com";
-
-    @BeforeTest
-    public void beforeTest(){
-
+    TitleTestSuit() {
+        url = "https://example.com";
     }
 
     @Test
-    public void TitleTS(){
-
+    public void TitleSuccess(){
+        var title = driver.getTitle();
+        softAssert.assertEquals(title, "Example Domain");
+        softAssert.assertAll();
     }
 }
